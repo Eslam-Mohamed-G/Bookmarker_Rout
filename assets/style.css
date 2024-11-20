@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+:root{
+    --bg-color:     hsl(33, 46%, 90%);
+    --header-color: hsl(34, 61%, 92%);
+    --btn-submit:   rgb(188, 66, 32);
+    --danger-color: rgb(255, 0, 0);
+    --header-hover: hsl(37, 57%, 59%);
+    --true-color:   rgb(0, 128, 0);
+    --warning-color:rgb(254, 190, 46);
+}
+
+body{
+    background-color: var(--bg-color);
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.inputBookmark, .inputWebsite {
+    position: relative;
+}
+.mark{
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#true, #urltrue{
+    font-size: 24px;
+    color: var(--true-color);
+    display: none;
+}
+#false, #urlfalse{
+    font-size: 24px;
+    color: var(--danger-color);
+    display: none;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 .25rem rgb(254, 190, 46, .25);
+    border: 1px solid var(--warning-color);
+}
+
+.bookmark-danger:focus{
+    box-shadow: 0 0 0 .25rem rgb(188, 66, 32, .25);
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+.bookmark-green:focus {
+    box-shadow: 0 0 0 .25rem rgb(0, 128, 0, .25);
+    color: var(--true-color);
+    border: 1px solid var(--true-color);
+}
+
+
+
+/* bookmark-body */
+h1{
+    font-size: 50px;
+    font-family: "Pacifico", cursive;
+    color: #352e28;
+    isolation: isolate;
+    position: relative;
+    z-index: 1;
+    
+}
+h1::after{
+    content: "";
+    width: 100%;
+    height: 25%;
+    z-index: -1;
+    background-color: rgb(254, 194, 96);
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all ease-in-out .4s;
+}
+body:has(h1:hover) h1::after {
+    content: "";
+    width: 100%;
+    height: 50%;
+}
+
+h2{
+    background: linear-gradient(
+      90deg,
+      var(--true-color),
+      var(--warning-color)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+ 
+
+.bookmark-body{
+    font-family:"PT Sans Caption", sans-serif;
+    position: relative;
+}
+
+.bookmark-body::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px dotted #352e28;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bookmark-body::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px dotted #352e28;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* bookmark-body */
+
+
+
+
+/* <!-- box model --> */
+.box-info{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.box-conent{
+    max-width: 500px;
+}
+
+.circles span:nth-child(1),
+.circles span:nth-child(2),
+.circles span:nth-child(3){
+    background-color: var(--danger-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.circles span:nth-child(2){
+    background-color: var(--warning-color);
+}
+.circles span:nth-child(3){
+    background-color: var(--true-color);
+}
+.box-conent p{
+    font-size: 21px;
+    font-family: "bree serif", serif;
+    font-weight: 700;
+}
+.rules i{
+    color: var(--danger-color);
+}
+.hedden{
+    display: none;
+}
+/* <!-- box model --> */
